@@ -1,0 +1,25 @@
+---
+
+- name: Run post commands - {{ instance.name }}
+  command: '{{ item.command }}'
+  become: "{{ item.become | default(false) }}"
+  become_user: '{{ item.become_user | default(omit) }}'
+  args:
+    chdir: '{{ item.chdir | default(omit) }}'
+  loop: '{{ instance.post_commands | default([]) }}'
+
+- name: Run post uri
+  block:
+    - name: Run post uri - {{ instance.name }}
+      uri:
+        url: "{{ instance.post_uri }}"
+        return_content: true
+        body_format: json
+        validate_certs: false
+      register: post_response
+
+    - name: Output of post uri
+      debug:
+        var: post_response
+
+  when: instance.post_uri is defined

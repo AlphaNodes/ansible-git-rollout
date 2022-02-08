@@ -1,0 +1,9 @@
+---
+
+- name: Include instance tasks
+  include_tasks: instance.yml
+  tags:
+    - git
+  loop: "{{ git_rollout_instances }}"
+  loop_control:
+    loop_var: instance
