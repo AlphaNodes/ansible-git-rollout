@@ -5,10 +5,6 @@
     msg: 'dir is missing for {{ instance.name }}'
   when: instance.dir is undefined or instance.dir == ''
 
-- name: Ensure we have ForwardAgent
-  command: ssh-add -l
-  changed_when: false
-
 - name: Run git clone/pull - {{ instance.name }}
   git:
     repo: '{{ instance.repo }}'
