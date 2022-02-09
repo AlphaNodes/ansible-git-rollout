@@ -1,6 +1,7 @@
 ---
 
 galaxy_info:
+  role_name: git-rollout
   description: Run git rollouts
   author: alexandermeindl
   company: AlphaNodes GmbH
