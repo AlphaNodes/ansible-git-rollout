@@ -11,4 +11,4 @@
       apt: name=git state=present
 
   roles:
-    - role: AlphaNodes.git-rollout
+    - role: alphanodes.git_rollout
