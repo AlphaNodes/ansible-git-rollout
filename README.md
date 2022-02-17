@@ -8,8 +8,8 @@ Git rollout from a definition list
 
 Using ansible galaxy cli:
 
-```bash
-ansible-galaxy install alphanodes.git-rollout
+```shell
+ansible-galaxy install alphanodes.git_rollout
 ```
 
 ## Role Variables
@@ -30,7 +30,7 @@ git has to be installed.
         repo: git@github.com:myname/myrepo.git
         dir: /srv/targetdir
   roles:
-    - AlphaNodes.git-rollout
+    - alphanodes.git_rollout
 ```
 
 ## License
